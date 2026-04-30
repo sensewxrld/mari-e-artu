@@ -147,23 +147,23 @@ const TimeCounter = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
-      className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mt-10"
+      className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-2xl mx-auto mt-10 px-4"
     >
       {[
         { label: 'Dias', value: timeLeft.days },
         { label: 'Horas', value: timeLeft.hours },
-        { label: 'Minutos', value: timeLeft.minutes },
-        { label: 'Segundos', value: timeLeft.seconds },
+        { label: 'Mins', value: timeLeft.minutes },
+        { label: 'Segs', value: timeLeft.seconds },
       ].map((data) => (
         <motion.div
           key={data.label}
           variants={item}
-          className="bg-white/60 backdrop-blur-lg p-6 rounded-3xl shadow-xl border border-romantic-100/50 text-center transform transition-transform hover:scale-105"
+          className="bg-white/60 backdrop-blur-lg p-3 sm:p-6 rounded-2xl sm:rounded-3xl shadow-xl border border-romantic-100/50 text-center transform transition-transform hover:scale-105"
         >
-          <div className="text-4xl md:text-5xl font-bold bg-gradient-to-br from-romantic-600 to-romantic-400 bg-clip-text text-transparent">
+          <div className="text-2xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-br from-romantic-600 to-romantic-400 bg-clip-text text-transparent">
             {data.value}
           </div>
-          <div className="text-xs text-romantic-400 uppercase tracking-[0.2em] mt-2 font-bold">{data.label}</div>
+          <div className="text-[10px] sm:text-xs text-romantic-400 uppercase tracking-widest sm:tracking-[0.2em] mt-1 sm:mt-2 font-bold">{data.label}</div>
         </motion.div>
       ))}
     </motion.div>
@@ -229,7 +229,7 @@ function App() {
             </div>
           </motion.div>
           
-          <h1 className="text-6xl md:text-8xl font-dancing text-romantic-600 mb-6 drop-shadow-sm">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-dancing text-romantic-600 mb-6 drop-shadow-sm px-4">
             Marina & Arthur
           </h1>
           
@@ -237,13 +237,13 @@ function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
-            className="flex items-center justify-center gap-3 text-romantic-400 mb-8"
+            className="flex items-center justify-center gap-2 sm:gap-3 text-romantic-400 mb-8 px-4"
           >
-            <Sparkles size={20} />
-            <p className="text-xl md:text-3xl font-light tracking-wide">
+            <Sparkles size={16} className="sm:w-5 sm:h-5" />
+            <p className="text-lg sm:text-xl md:text-3xl font-light tracking-wide">
               1 Ano e 11 Meses de Amor
             </p>
-            <Sparkles size={20} />
+            <Sparkles size={16} className="sm:w-5 sm:h-5" />
           </motion.div>
           
           <TimeCounter />
@@ -319,13 +319,13 @@ function App() {
                 className={`flex flex-col md:flex-row items-center gap-12 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
               >
                 <div className="flex-1 w-full">
-                  <div className={`bg-white/70 backdrop-blur-md p-10 rounded-[2.5rem] border border-romantic-100 shadow-xl hover:shadow-2xl transition-shadow duration-500 relative group`}>
-                    <div className="absolute -top-4 -left-4 bg-romantic-500 p-4 rounded-2xl shadow-lg transform group-hover:rotate-12 transition-transform">
+                  <div className={`bg-white/70 backdrop-blur-md p-6 sm:p-10 rounded-3xl sm:rounded-[2.5rem] border border-romantic-100 shadow-xl hover:shadow-2xl transition-shadow duration-500 relative group`}>
+                    <div className="absolute -top-4 -left-4 bg-romantic-500 p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-lg transform group-hover:rotate-12 transition-transform">
                       {item.icon}
                     </div>
-                    <h3 className="text-3xl font-bold text-romantic-600 mb-2">{item.title}</h3>
-                    <p className="text-romantic-400 text-sm mb-6 font-bold uppercase tracking-widest">{item.date}</p>
-                    <p className="text-slate-600 leading-relaxed text-lg">{item.content}</p>
+                    <h3 className="text-xl sm:text-3xl font-bold text-romantic-600 mb-2">{item.title}</h3>
+                    <p className="text-romantic-400 text-[10px] sm:text-sm mb-4 sm:mb-6 font-bold uppercase tracking-widest">{item.date}</p>
+                    <p className="text-slate-600 leading-relaxed text-sm sm:text-lg">{item.content}</p>
                   </div>
                 </div>
                 <div className="hidden md:block w-4 h-4 bg-romantic-500 rounded-full border-4 border-white shadow-md z-20" />
@@ -384,17 +384,17 @@ function App() {
       </section>
 
       {/* Carta de Amor Section */}
-      <section className="py-32 px-4 z-10 relative">
+      <section className="py-20 sm:py-32 px-4 z-10 relative">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="max-w-3xl mx-auto bg-white p-12 md:p-20 rounded-[3rem] shadow-2xl border border-romantic-50 relative"
+          className="max-w-3xl mx-auto bg-white p-8 sm:p-20 rounded-[2rem] sm:rounded-[3rem] shadow-2xl border border-romantic-50 relative"
         >
-          <Quote className="absolute top-10 left-10 text-romantic-100" size={80} />
+          <Quote className="absolute top-6 left-6 sm:top-10 sm:left-10 text-romantic-100 w-12 h-12 sm:w-20 sm:h-20" />
           <div className="relative z-10 text-center">
-            <h2 className="text-4xl md:text-5xl font-dancing text-romantic-600 mb-10">Marina, meu amor...</h2>
-            <div className="space-y-6 text-slate-600 text-lg leading-relaxed font-light italic">
+            <h2 className="text-3xl sm:text-5xl font-dancing text-romantic-600 mb-6 sm:mb-10">Marina, meu amor...</h2>
+            <div className="space-y-4 sm:space-y-6 text-slate-600 text-base sm:text-lg leading-relaxed font-light italic">
               <p>
                 "Minha moranguinho, minha borboletinha... Desde o primeiro dia no Del Rey, eu soube que você era a pessoa da minha vida. Cada aventura que vivemos — desde o frio inesquecível da nossa viagem para o Chile até a emoção de cantarmos juntos no show do Luan Santana — só me deu a certeza de que fomos feitos um para o outro."
               </p>
